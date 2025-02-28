@@ -9,6 +9,11 @@ const app = express()
 const PORT = process.env.PORT || 3000
 
 
+import userRouter from "./routes/user.route.js"
+
+
+app.use("/users",userRouter)
+
 app.listen(PORT, ()=> {
     connectDB()
     console.log(`Server is running on the port ${PORT}`)

@@ -15,3 +15,9 @@ This is a full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) e-commerc
 - Express.js **server configuration**
 - Connected MongoDB using **Mongoose**  
 - Added **error handling middleware**
+
+### [**4. User Management (Milestone 4)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-4)
+- Created the **User model**  
+- Implemented **User controller**  
+- Added **file upload functionality** using Multer
+- Implemented **User register route**
