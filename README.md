@@ -35,3 +35,8 @@ This is a full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) e-commerc
 - Created the **login API endpoint**  
 - Verified passwords securely  
 - Set up **authentication system**
+
+### [**8. Product Display (Milestone 8)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-8)   
+- Built a **reusable product card** component  
+- Designed the **homepage layout**  
+- Implemented a **product grid**
