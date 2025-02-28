@@ -22,6 +22,11 @@ This is a full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) e-commerc
 - Added **file upload functionality** using Multer
 - Implemented **User register route**
 
-### [**5. Sign-up Page (Milestone 5)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-4)
+### [**5. Sign-up Page (Milestone 5)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-5)
 - Built the **frontend signup form**  
 - Implemented **form validation**  
+
+### [**6. Secure Signup Backend (Milestone 6)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-6)
+- Encrypted passwords with **bcrypt**  
+- Stored **user data securely** in MongoDB  
+- Handled **validation errors**

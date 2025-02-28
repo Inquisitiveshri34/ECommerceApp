@@ -27,7 +27,8 @@ const registerUser = async (req,res) => {
     const user = await User.create({
         name, email, password, profilePic: profilePic.url
     })
-    res.status(200).send("User created")
+    const createdUser = await User.findOne({email})
+    res.status(200).send(createdUser)
 }
 
 export {registerUser}
