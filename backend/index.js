@@ -2,11 +2,14 @@ import express from "express"
 import dotenv from "dotenv"
 dotenv.config()
 
-import { wrapAsync } from "./utils/wrapAsync.js"
+
 import { connectDB } from "./config/db.js"
 
 const app = express()
 const PORT = process.env.PORT || 3000
+
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
 
 
 import userRouter from "./routes/user.route.js"

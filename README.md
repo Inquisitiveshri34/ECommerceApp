@@ -30,3 +30,8 @@ This is a full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) e-commerc
 - Encrypted passwords with **bcrypt**  
 - Stored **user data securely** in MongoDB  
 - Handled **validation errors**
+
+### [**7. Login Backend (Milestone 7)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-7)  
+- Created the **login API endpoint**  
+- Verified passwords securely  
+- Set up **authentication system**
