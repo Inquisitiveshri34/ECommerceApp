@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { validateEmail } from '../utils/helper.js'
+import axios from "../utils/axios.js"
 
 const SignUpPage = () => {
     const [data,setData] = useState({
@@ -28,8 +29,16 @@ const SignUpPage = () => {
             return alert("Name should be 3 characters long")
         }
         console.log(data)
+        axios.post('/users/register', {
+            name,
+            email,
+            password
+        }).then(()=>{
         alert("Signed In Successfully")
         navigate("/login")
+        }).catch((err)=>{
+            console.log(err)
+        })
     }
   return (
     <div className='w-screen h-screen flex justify-center items-center space-x-6 bg-white'>

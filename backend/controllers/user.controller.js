@@ -17,16 +17,16 @@ const registerUser = wrapAsync(async (req,res) => {
         if (existedUser){
             return res.status(400).send("User pre-exists")
         }
-        const profilePicLocalPath = req.files?.profilePic[0]?.path
-        if(!profilePicLocalPath){
-            return res.status(400).send("Image can't be uploaded")
-        }
-        const profilePic = await uploadOnCloudinary(profilePicLocalPath)
-        if(!profilePic){
-            return res.status(400).send("Pic couldn't be uploaded")
-        }
+        // const profilePicLocalPath = req.files?.profilePic[0]?.path
+        // if(!profilePicLocalPath){
+        //     res.status(400).send("Image can't be uploaded")
+        // }
+        // const profilePic = await uploadOnCloudinary(profilePicLocalPath)
+        // if(!profilePic){
+        //     res.status(400).send("Pic couldn't be uploaded")
+        // }
         const user = await User.create({
-            name, email, password, profilePic: profilePic.url
+            name, email, password
         })
         const createdUser = await User.findOne({email})
         res.status(200).send(createdUser)
