@@ -6,12 +6,14 @@ import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } 
 import Layout from './Layout.jsx'
 import LoginPage from './pages/LoginPage.jsx'
 import HomePage from './pages/HomePage.jsx'
+import SignUpPage from './pages/SignUpPage.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout/>}>
       <Route path="" element={<HomePage/>}/>
       <Route path="login" element={<LoginPage/>}/>
+      <Route path="register" element={<SignUpPage/>}/>
     </Route>
   )
 )
