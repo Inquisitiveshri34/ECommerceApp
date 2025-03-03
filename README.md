@@ -40,3 +40,9 @@ This is a full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) e-commerc
 - Built a **reusable product card** component  
 - Designed the **homepage layout**  
 - Implemented a **product grid**
+
+### [**9. Product Form (Milestone 9)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-9)   
+- Created the **product creation form**  
+- Added **multiple image upload** feature  
+- Developed the **Product schema** using Mongoose  
+- Integrated **product fetching** from the backend using Axios  

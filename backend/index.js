@@ -15,9 +15,11 @@ app.use(express.urlencoded({extended:true}))
 app.use(cors())
 
 import userRouter from "./routes/user.route.js"
+import productRouter from "./routes/product.route.js"
 
 
 app.use("/users",userRouter)
+app.use("/products",productRouter)
 
 app.listen(PORT, ()=> {
     connectDB()

@@ -9,6 +9,9 @@ const Header = () => {
                 <NavLink to="/" className={({isActive})=>`${isActive ? "underline underline-offset-6" : "underline-none"} text-white text-2xl`}>Home</NavLink>
             </li>
             <li>
+                <NavLink to="/product/add" className={({isActive})=>`${isActive ? "underline underline-offset-6" : "underline-none"} text-white text-2xl`}>ProductAdd</NavLink>
+            </li>
+            <li>
                 <NavLink to="/login" className={({isActive})=>`${isActive ? "underline underline-offset-6" : "underline-none"} text-white text-2xl`}>Login</NavLink>
             </li>
         </ul>
