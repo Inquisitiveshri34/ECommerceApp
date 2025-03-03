@@ -11,6 +11,9 @@ const createProduct = wrapAsync(async (req,res) => {
     ){
         return res.status(400).send("All fields are required")
     }
+    if (price < 0) {
+        return res.status(400).send("Price cannot be negative")
+    }
     const existedProduct = await Product.findOne({name})
     if (existedProduct){
         return res.status(400).send("Product pre-exists")
@@ -44,4 +47,15 @@ const showProducts = wrapAsync(async(req,res)=>{
     res.status(200).send(products)
 })
 
-export {createProduct,showProducts}
+const showProduct = wrapAsync(async(req,res)=>{
+})
+
+const updateProduct = wrapAsync(async(req,res)=>{
+
+})
+
+const deleteProduct = wrapAsync(async(req,res)=>{
+
+})
+
+export {createProduct,showProducts,showProduct,updateProduct,deleteProduct}

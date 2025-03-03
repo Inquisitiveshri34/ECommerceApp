@@ -6,6 +6,7 @@ const ProductForm = () => {
     const navigate = useNavigate()
     const [data,setData] = useState({
         name: "",
+        description: "",
         price: "",
     })
     const [files,setFiles] = useState()
@@ -20,8 +21,9 @@ const ProductForm = () => {
         e.preventDefault();
         
         const formData = new FormData();
-        const { name, price } = data;
+        const { name, description, price } = data;
         formData.append("name", name);
+        formData.append("description", description);
         formData.append("price", price);
         // Ensure 'files' contains the files selected by the user
         if (files && files.length > 0) {
@@ -58,6 +60,7 @@ const ProductForm = () => {
         <form onSubmit={formHandler} className='bg-[#5BC7E9] w-1/3 rounded-lg p-8 flex flex-col justify-center items-center'>
             <h3 className='text-[#47434C] text-center text-2xl font-semibold m-4'>New Product</h3>
             <input className='bg-white w-8/12 rounded outline-none p-3 m-4' type="text" name="name" placeholder="Enter Name" onChange={valueHandler} required/>
+            <input className='bg-white w-8/12 rounded outline-none p-3 m-4' type="text" name="description" placeholder="Enter Description" onChange={valueHandler}/>
             <input className='bg-white w-8/12 rounded outline-none p-3 m-4' type="number" name="price" placeholder="Enter Price" onChange={valueHandler} required/>
             <input type="file" name="productimg" id="1" multiple onChange={fileHandler} required/>
             <button className="text-white bg-[#47434C] p-3 rounded-lg w-fit m-4" type="submit">Add Product</button>

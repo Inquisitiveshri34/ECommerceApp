@@ -46,3 +46,8 @@ This is a full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) e-commerc
 - Added **multiple image upload** feature  
 - Developed the **Product schema** using Mongoose  
 - Integrated **product fetching** from the backend using Axios  
+
+### [**10. Product Backend (Milestone 10)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-10)     
+- Created **RESTful API endpoints** for managing products  
+- Implemented **data validation** to ensure accuracy  
+
