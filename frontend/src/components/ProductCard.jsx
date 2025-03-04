@@ -24,6 +24,9 @@ const ProductCard = ({data}) => {
           <button className='p-1.5 m-1.5 rounded bg-[#5BC7E9] text-white'><Link to={`/edit/${data._id}`}><i class="ri-edit-line"></i></Link></button>
           <button onClick={deleteProduct} className='p-1.5 m-1.5 rounded bg-red-600 text-white'><i class="ri-delete-bin-line"></i></button>
         </div>
+        <div>
+          <button className='p-1.5 m-1.5 rounded bg-[#5BC7E9] text-white'><Link to={`/products/${data._id}`}>View</Link></button>
+        </div>
     </div>
   )
 }

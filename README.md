@@ -70,3 +70,7 @@ This is a full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) e-commerc
 ### [**15. Navbar component created (Milestone 15)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-15)       
 - Implemented a **navbar** component. 
 - Made the navbar **responsive**.
+
+### [**16. Product Page created (Milestone 16)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-16)       
+- Created a **product page** to display the details about the product.
+- **Quantity** and **Add to Cart** buttons added.

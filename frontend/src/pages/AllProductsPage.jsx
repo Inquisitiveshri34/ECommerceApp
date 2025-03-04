@@ -3,7 +3,7 @@ import ProductCard from '../components/ProductCard.jsx'
 import axios from '../utils/axios.js'
 import Loader from '../components/Loader.jsx'
 
-const ProductsPage = () => {
+const AllProductsPage = () => {
   const [productList,setProductList] = useState([])
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [filterData,setFilterData] = useState({
@@ -63,4 +63,4 @@ const ProductsPage = () => {
   )
 }
 
-export default ProductsPage
+export default AllProductsPage
