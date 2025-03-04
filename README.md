@@ -66,3 +66,7 @@ This is a full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) e-commerc
 ### [**14. Product Delete Functionality (Milestone 14)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-14)       
 - Implemented a **product deleting feature** while fetching products 
 - Creating endpoint to **delete** the product.
+
+### [**15. Navbar component created (Milestone 15)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-15)       
+- Implemented a **navbar** component. 
+- Made the navbar **responsive**.
