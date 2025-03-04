@@ -55,3 +55,6 @@ This is a full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) e-commerc
 - Designed a **dynamic product listing page** with a grid layout  
 - Implemented a **loading state** while fetching products  
 - Enhanced **user experience** with Tailwind CSS  
+
+### [**12. Product Filter Functionality (Milestone 12)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-12)       
+- Implemented a **filtering feature** while fetching products    

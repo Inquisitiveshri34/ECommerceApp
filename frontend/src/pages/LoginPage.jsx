@@ -17,7 +17,7 @@ const LoginPage = () => {
     const formHandler = (e) =>{
         e.preventDefault()
         setLoading(true);
-        setInterval(() => {
+        setTimeout(() => {
         const {email,password} = data
         if(!email||!password){
             return alert("All fields are required")

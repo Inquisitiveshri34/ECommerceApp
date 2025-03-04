@@ -24,7 +24,7 @@ const ProductForm = () => {
         e.preventDefault();
         setLoading(true);
         setError(null);
-        setInterval(() => {
+        setTimeout(() => {
         const { name, description, price } = data;
         if (!name || !description || !price) {
           setLoading(false); 

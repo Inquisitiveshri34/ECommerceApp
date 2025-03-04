@@ -18,7 +18,7 @@ const SignUpPage = () => {
     const formHandler = (e) =>{
         e.preventDefault()
         setLoading(true);
-        setInterval(() => {
+        setTimeout(() => {
         const {name,email,password} = data
         if(!name||!email||!password){
             return alert("All fields are required")
