@@ -4,7 +4,7 @@ import axios from "../utils/axios.js"
 
 
 const ProductCard = ({data}) => {
-  const deleteProduct = (e) => {
+  const deleteProduct = () => {
     const result = window.confirm("Are you sure you want to permanently DELETE the product?");
     if (result) {
       axios.delete(`/products/${data._id}`).then(()=>{
