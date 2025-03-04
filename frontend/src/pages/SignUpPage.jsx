@@ -32,7 +32,6 @@ const SignUpPage = () => {
         if(name.length < 3){
             return alert("Name should be 3 characters long")
         }
-        console.log(data)
         axios.post('/users/register', {
             name,
             email,

@@ -79,3 +79,7 @@ This is a full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) e-commerc
 - Implemented **JWT authentication** 
 - Protected routes requiring authentication
 - Created **Add to Cart** endpoint and connected to product pages
+
+### [**18. Cart Page Created (Milestone 18)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-18)
+- Displayed the cart in the **Cart page** 
+- Handled **empty cart** scenario with a friendly message

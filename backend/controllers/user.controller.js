@@ -1,4 +1,5 @@
 import User from "../models/user.model.js"
+import Product from "../models/product.model.js"
 import { uploadOnCloudinary } from "../utils/cloudinary.js";
 import { wrapAsync } from "../utils/wrapAsync.js";
 import mongoose from "mongoose";
@@ -52,22 +53,36 @@ const loginUser = wrapAsync(async (req,res) => {
         res.status(200).json({user,token})
 })
 
-const addProductToCart = async(req,res) => {
-    try{
+const addProductToCart = wrapAsync(async(req,res) => {
     const productId = req.params.id
+    console.log(productId)
     const {quantity} = req.body
     if (!mongoose.Types.ObjectId.isValid(productId)) {
         return res.status(400).send('Invalid product ID'); 
     }
-    const user = await User.findByIdAndUpdate(req.user.id,{$push: 
-        {cart : {productId, quantity}}
-    },{new:true})
-    res.status(200).json(user)
-    } catch (err){
-        console.log(err)
-        res.status(500).send(err)
+    const product = await Product.findById(productId)
+    if(!product){
+        return res.status(400).send("Product not found")
     }
-}
+    console.log(product)
+    const user = await User.findByIdAndUpdate(req.user.id,{$push: 
+        {cart : {product : productId, quantity}}
+    },{new:true})
+    console.log(user)
+    res.status(200).json(user)
+})
+
+const showCartItems = wrapAsync(async(req,res)=>{
+    const user = await User.findById(req.user.id)
+        .populate({
+            path: 'cart.product',
+            select: 'name price description images', 
+        });
+    if (!user){
+        return res.status(400).send("User not found")
+    }
+    res.status(200).send(user.cart)
+})
 
 
-export {registerUser,loginUser,addProductToCart }
+export {registerUser,loginUser,addProductToCart,showCartItems }

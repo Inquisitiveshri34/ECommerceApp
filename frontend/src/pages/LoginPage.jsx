@@ -32,7 +32,6 @@ const LoginPage = () => {
             email,
             password
         }).then((response)=>{
-        console.log(response)
         localStorage.setItem("token",response.data.token)
         alert("Logged In Successfully")
         navigate("/")
