@@ -62,3 +62,7 @@ This is a full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) e-commerc
 ### [**13. Product Edit Functionality (Milestone 13)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-13)       
 - Implemented a **product editing feature** while fetching products 
 - Creating endpoint to **edit** the product.
+
+### [**14. Product Delete Functionality (Milestone 14)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-14)       
+- Implemented a **product deleting feature** while fetching products 
+- Creating endpoint to **delete** the product.

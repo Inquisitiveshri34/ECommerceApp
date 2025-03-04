@@ -80,7 +80,15 @@ const updateProduct = wrapAsync(async(req,res)=>{
 })
 
 const deleteProduct = wrapAsync(async(req,res)=>{
-
+    const id = req.params.id
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(400).send('Invalid product ID'); 
+    }
+    const deletedProduct = await Product.findByIdAndDelete(id)
+    if (!deletedProduct){
+        return res.status(400).send("Product not found")
+    }
+    res.status(200).send(deletedProduct)
 })
 
 export {createProduct,showProducts,showProduct,updateProduct,deleteProduct}
