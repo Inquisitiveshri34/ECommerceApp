@@ -1,6 +1,8 @@
 import User from "../models/user.model.js"
 import { uploadOnCloudinary } from "../utils/cloudinary.js";
 import { wrapAsync } from "../utils/wrapAsync.js";
+import mongoose from "mongoose";
+
 
 const registerUser = wrapAsync(async (req,res) => {
         const {name,email,password} = req.body;
@@ -45,9 +47,27 @@ const loginUser = wrapAsync(async (req,res) => {
         if (!isPasswordValid) {
             return res.status(400).send("Wrong credentials")
         }
+        const token = await user.generateJWT()
         delete user._doc.password;
-        res.status(200).send(user)
+        res.status(200).json({user,token})
 })
 
+const addProductToCart = async(req,res) => {
+    try{
+    const productId = req.params.id
+    const {quantity} = req.body
+    if (!mongoose.Types.ObjectId.isValid(productId)) {
+        return res.status(400).send('Invalid product ID'); 
+    }
+    const user = await User.findByIdAndUpdate(req.user.id,{$push: 
+        {cart : {productId, quantity}}
+    },{new:true})
+    res.status(200).json(user)
+    } catch (err){
+        console.log(err)
+        res.status(500).send(err)
+    }
+}
 
-export {registerUser,loginUser}
+
+export {registerUser,loginUser,addProductToCart }

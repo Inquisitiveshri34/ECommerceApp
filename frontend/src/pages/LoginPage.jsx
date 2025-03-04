@@ -31,8 +31,9 @@ const LoginPage = () => {
         axios.post('/users/login', {
             email,
             password
-        }).then(()=>{
-        console.log(data)
+        }).then((response)=>{
+        console.log(response)
+        localStorage.setItem("token",response.data.token)
         alert("Logged In Successfully")
         navigate("/")
         }).catch((err)=>{

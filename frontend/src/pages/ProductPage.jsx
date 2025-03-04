@@ -30,21 +30,28 @@ const ProductPage = () => {
     },[id])
     const cartHandler = () => {
         setLoading(true);
-        console.log(id)
-        navigate("/cart")
-        // setTimeout(() => {
-        // axios.put(``,{quantity})
-        // .then(()=>{
-        //     alert("Product Added to Cart")
-        //     navigate("/")
-        // })
-        // .catch((err)=>{
-        //     console.log(err.message || 'Something went wrong');
-        // })
-        // .finally(
-        //     setLoading(false)
-        // )
-        // }, 1000);
+        const token = localStorage.getItem('token');
+        if (token){
+            setTimeout(() => {
+            axios.post(`users/product/${id}`,{
+                quantity,
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            })
+            .then(()=>{
+                alert("Product Added to Cart")
+                navigate("/cart")
+            })
+            .catch((err)=>{
+                console.log(err.message || 'Something went wrong');
+            })
+            .finally(
+                setLoading(false)
+            )
+            }, 1000);
+        }
     };
   return (
     <div className='w-screen h-screen m-3 p-4 flex'>

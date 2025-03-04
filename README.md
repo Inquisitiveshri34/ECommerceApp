@@ -74,3 +74,8 @@ This is a full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) e-commerc
 ### [**16. Product Page created (Milestone 16)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-16)       
 - Created a **product page** to display the details about the product.
 - **Quantity** and **Add to Cart** buttons added.
+
+### [**17. Add to Cart Endpoint Created (Milestone 17)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-17)
+- Implemented **JWT authentication** 
+- Protected routes requiring authentication
+- Created **Add to Cart** endpoint and connected to product pages

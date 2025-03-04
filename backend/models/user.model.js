@@ -1,5 +1,6 @@
 import mongoose from "mongoose"
 import bcrypt from "bcrypt"
+import jwt from "jsonwebtoken"
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -21,7 +22,13 @@ const userSchema = new mongoose.Schema({
     },
     profilePic: {
         type: String,
-    }
+    },
+    cart: [
+        {
+          product: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },  
+          quantity: { type: Number, default: 1 },  
+        },
+      ],
 })
 
 userSchema.pre("save", async function (next) {
@@ -32,6 +39,16 @@ userSchema.pre("save", async function (next) {
 
 userSchema.methods.isPasswordCorrect = async function(password){
     return await bcrypt.compare(password, this.password)
+}
+
+userSchema.methods.generateJWT = function(){
+    return jwt.sign(
+        {   
+            id: this._id,
+            name: this.name,
+            email:this.email,
+        },
+        process.env.JWT_SECRET)
 }
 
 
