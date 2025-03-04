@@ -9,6 +9,7 @@ import LoginPage from './pages/LoginPage.jsx'
 import HomePage from './pages/HomePage.jsx'
 import SignUpPage from './pages/SignUpPage.jsx'
 import ProductForm from './pages/ProductForm.jsx'
+import ProductEdit from './pages/ProductEdit.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +18,7 @@ const router = createBrowserRouter(
       <Route path="login" element={<LoginPage/>}/>
       <Route path="register" element={<SignUpPage/>}/>
       <Route path="/product/add" element={<ProductForm/>}/>
+      <Route path="/edit/:id" element={<ProductEdit/>}/>
     </Route>
     
   )

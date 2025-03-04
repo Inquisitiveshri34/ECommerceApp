@@ -58,3 +58,7 @@ This is a full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) e-commerc
 
 ### [**12. Product Filter Functionality (Milestone 12)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-12)       
 - Implemented a **filtering feature** while fetching products    
+
+### [**13. Product Edit Functionality (Milestone 13)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-13)       
+- Implemented a **product editing feature** while fetching products 
+- Creating endpoint to **edit** the product.

@@ -1,6 +1,7 @@
 import Product from "../models/product.model.js"
 import { uploadOnCloudinary } from "../utils/cloudinary.js";
 import { wrapAsync } from "../utils/wrapAsync.js";
+import mongoose from "mongoose";
 
 const createProduct = wrapAsync(async (req,res) => {
     const {name,price} = req.body;
@@ -48,10 +49,34 @@ const showProducts = wrapAsync(async(req,res)=>{
 })
 
 const showProduct = wrapAsync(async(req,res)=>{
+    const {id} = req.params
+    if (!id){
+        return res.status(400).send("Id not found")
+    }
+    const product = await Product.findById(id)
+    if (!product){
+        return res.status(400).send("Wrong Id")
+    }
+    res.status(200).send(product)
 })
 
 const updateProduct = wrapAsync(async(req,res)=>{
-
+    const id = req.params.id
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(400).send('Invalid product ID'); 
+    }
+    const {name, description, price} = req.body;
+    if(!name || name.trim() == ""){
+        return res.status(400).send("All fields are required")
+    }
+    if (price < 0) {
+        return res.status(400).send("Price cannot be negative")
+    }
+    const editedProduct = await Product.findByIdAndUpdate(id,{name,description,price},{new:true})
+    if (!editedProduct){
+        return res.status(400).send("Product not found")
+    }
+    res.status(200).send(editedProduct)
 })
 
 const deleteProduct = wrapAsync(async(req,res)=>{

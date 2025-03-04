@@ -17,7 +17,6 @@ const HomePage = () => {
       [name]: value ? parseInt(value) : "",
     }));
   };
-  console.log(filterData)
   const [loading, setLoading] = useState(false);
   const fetchData = () =>{
     setLoading(true);
@@ -51,7 +50,7 @@ const HomePage = () => {
               <h3 className="">Price Range: </h3>
               <input className='bg-white w-1/12 px-2 rounded outline-none border' type="number" name="min" placeholder='min' min="0" value={filterData.min} onChange={valueHandler}/>
               <input className='bg-white w-1/12 px-2 rounded outline-none border' type="number" name="max" placeholder='max' max="1000000" value={filterData.max} onChange={valueHandler}/>
-              <button className="text-white bg-[#47434C] px-2 rounded w-fit" onClick={filterHandler}>Apply</button>
+              <button className=" bg-[#5BC7E9] px-2 rounded w-fit" onClick={filterHandler}>Apply</button>
           </div>
           <div className="ProductContainer m-3 grid gap-3 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
             {filteredProducts.map((product,i)=>(
