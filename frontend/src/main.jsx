@@ -14,6 +14,7 @@ import ProductEdit from './pages/ProductEdit.jsx'
 import CartPage from './pages/CartPage.jsx'
 import ProductPage from './pages/ProductPage.jsx'
 import UserProfile from './pages/UserProfile.jsx'
+import AddressForm from './pages/AddressForm.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
       <Route path="/edit/:id" element={<ProductEdit/>}/>
       <Route path="/cart" element={<CartPage/>}/>
       <Route path="/products/:id" element={<ProductPage/>}/>
+      <Route path="/users/address" element={<AddressForm/>}/>
     </Route>
     
   )

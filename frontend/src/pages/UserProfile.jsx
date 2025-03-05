@@ -28,7 +28,7 @@ const UserProfile = () => {
     }, [token])
     console.log(user)
     const addAddress = () => {
-        
+        navigate('/users/address')
     }
   return (
     <div className='w-screen h-screen m-3 p-3 bg-white'>
@@ -45,13 +45,14 @@ const UserProfile = () => {
                             <p>Email: {user.email}</p>
                         </div>
                         <div>
-                            <h3>Addresses: </h3>
+                            <h3 className='inline'>Addresses: </h3> 
+                            <button className='p-2 m-3 bg-[#5BC7E9] rounded-lg' onClick={addAddress}>Add Address</button>
                             {(user.addressArr.length > 0) ? (
                                 null
                             ) : (
                                 <h3>No address found.</h3>
                             )}
-                            <button onClick={addAddress}>Add Address</button>
+
                         </div>
                     </div>
                 )

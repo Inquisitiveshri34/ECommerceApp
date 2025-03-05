@@ -119,5 +119,9 @@ const updateQuantity = wrapAsync(async(req,res)=>{
     res.status(200).send({ message: "Cart updated successfully", cart: user.cart });
 })
 
+const addAddress = wrapAsync(async(req,res)=>{
+    
+})
 
-export {registerUser,loginUser,profileUser, addProductToCart,showCartItems,updateQuantity }
+
+export {registerUser,loginUser,profileUser, addProductToCart,showCartItems,updateQuantity,addAddress }

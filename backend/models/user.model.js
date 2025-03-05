@@ -25,7 +25,26 @@ const userSchema = new mongoose.Schema({
         default: "https://res.cloudinary.com/dbinjibgr/image/upload/v1741160215/Sample_User_Icon_f4kzgk.png"
     },
     addressArr : [{
-        type: String
+            addressType: {
+                type: String
+            },
+            address1: {
+                type: String
+            },
+            address2: {
+                type: String
+            },
+            city: {
+                type: String
+            },
+            country: {
+                type: String
+            },
+            zipCode: {
+                type: Number,
+                min: 100000,
+                max: 999999,
+            },
     }],
     cart: [
         {
