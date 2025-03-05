@@ -83,3 +83,7 @@ This is a full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) e-commerc
 ### [**18. Cart Page Created (Milestone 18)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-18)
 - Displayed the cart in the **Cart page** 
 - Handled **empty cart** scenario with a friendly message
+
+### [**19. Cart Page Functionality (Milestone 19)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-19)
+- Added **"+"** and **"-"** buttons to increase and decrease quantity
+- Created endpoints to increase and decrease quantity

@@ -84,5 +84,32 @@ const showCartItems = wrapAsync(async(req,res)=>{
     res.status(200).send(user.cart)
 })
 
+const updateQuantity = wrapAsync(async(req,res)=>{
+    const {productId} = req.params
+    const {quantity} = req.body
 
-export {registerUser,loginUser,addProductToCart,showCartItems }
+    if (!productId || !quantity){
+        return res.status(400).send("Fields can't be empty")
+    }
+    if (quantity <= 0) {
+        return res.status(400).send({ error: "Quantity must be greater than zero" });
+      }
+
+    const user = await User.findById(req.user.id)
+    if (!user){
+        return res.status(400).send("User Not Found")
+    }
+    const cartItemIndex = user.cart.findIndex(cartItem => cartItem.product.toString() === productId);
+
+    if (cartItemIndex !== -1) {
+        user.cart[cartItemIndex].quantity = quantity;
+    } else {
+        user.cart.push({ product: productId, quantity });
+    }
+    await user.save();
+
+    res.status(200).send({ message: "Cart updated successfully", cart: user.cart });
+})
+
+
+export {registerUser,loginUser,addProductToCart,showCartItems,updateQuantity }

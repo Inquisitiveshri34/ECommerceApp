@@ -1,5 +1,5 @@
 import {Router} from "express"
-import { registerUser,loginUser,addProductToCart,showCartItems  } from "../controllers/user.controller.js";
+import { registerUser,loginUser,addProductToCart,showCartItems,updateQuantity  } from "../controllers/user.controller.js";
 import {authUser} from "../middlewares/auth.middleware.js"
 import { upload } from "../middlewares/multer.middleware.js";
 
@@ -17,6 +17,11 @@ router.route("/product/:id").post(
 router.route("/product/cart").get(
     authUser,
     showCartItems
+)
+
+router.route("/product/:productId").put(
+    authUser,
+    updateQuantity
 )
 
 export default router;
