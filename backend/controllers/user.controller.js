@@ -120,7 +120,15 @@ const updateQuantity = wrapAsync(async(req,res)=>{
 })
 
 const addAddress = wrapAsync(async(req,res)=>{
-    
+    const { country, city, address1, address2, zipCode, addressType} = req.body;
+    if (!country || !city || !address1 || !address2 || !zipCode || !addressType) {
+        return res.status(400).send("All fields are required!")
+    }
+    const user = await User.findByIdAndUpdate(req.user.id,{$push: 
+        {addressArr : {country, city, address1, address2, zipCode, addressType}}
+    },{new:true})
+
+    res.status(200).send(user)
 })
 
 

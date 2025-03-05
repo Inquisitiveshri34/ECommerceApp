@@ -95,4 +95,7 @@ This is a full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) e-commerc
 ### [**21. Address Form Page Created (Milestone 21)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-21)
 - Created **Address Form Page** for users to fill their address details
 - Added a **Add Address** button functionality
+
+### [**22. Address Adding Functionality (Milestone 22)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-22)
 - Created endpoint to **add address in data**
+- Added address to the **user collection**
