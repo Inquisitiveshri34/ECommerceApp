@@ -87,3 +87,7 @@ This is a full-stack **MERN** (MongoDB, Express.js, React.js, Node.js) e-commerc
 ### [**19. Cart Page Functionality (Milestone 19)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-19)
 - Added **"+"** and **"-"** buttons to increase and decrease quantity
 - Created endpoints to increase and decrease quantity
+
+### [**20. Profile Page Created (Milestone 20)**](https://github.com/Inquisitiveshri34/ECommerceApp/tree/milestone-20)
+- Created **Profile Page** for users to see their details
+- Added a **Add Address** button

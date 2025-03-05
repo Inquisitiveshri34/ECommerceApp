@@ -22,7 +22,11 @@ const userSchema = new mongoose.Schema({
     },
     profilePic: {
         type: String,
+        default: "https://res.cloudinary.com/dbinjibgr/image/upload/v1741160215/Sample_User_Icon_f4kzgk.png"
     },
+    addressArr : [{
+        type: String
+    }],
     cart: [
         {
             product: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },  

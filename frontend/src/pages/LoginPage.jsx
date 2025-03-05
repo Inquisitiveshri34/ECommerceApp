@@ -34,7 +34,7 @@ const LoginPage = () => {
         }).then((response)=>{
         localStorage.setItem("token",response.data.token)
         alert("Logged In Successfully")
-        navigate("/")
+        navigate("/profile")
         }).catch((err)=>{
             console.log(err)
             alert("Some Error occured")

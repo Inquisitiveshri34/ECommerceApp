@@ -53,6 +53,14 @@ const loginUser = wrapAsync(async (req,res) => {
         res.status(200).json({user,token})
 })
 
+const profileUser = wrapAsync(async(req,res)=>{
+    const user = await User.findById(req.user.id).select("-cart")
+    if (!user){
+        return res.status(400).send("User not found")
+    }
+    res.status(200).send(user)
+})
+
 const addProductToCart = wrapAsync(async(req,res) => {
     const productId = req.params.id
     console.log(productId)
@@ -112,4 +120,4 @@ const updateQuantity = wrapAsync(async(req,res)=>{
 })
 
 
-export {registerUser,loginUser,addProductToCart,showCartItems,updateQuantity }
+export {registerUser,loginUser,profileUser, addProductToCart,showCartItems,updateQuantity }

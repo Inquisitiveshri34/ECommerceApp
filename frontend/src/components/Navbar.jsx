@@ -32,8 +32,8 @@ const Header = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/login" className={({ isActive }) => `${isActive ? "underline underline-offset-6" : "underline-none"} text-white text-2xl`}>
-            Login
+          <NavLink to="/profile" className={({ isActive }) => `${isActive ? "underline underline-offset-6" : "underline-none"} text-white text-2xl`}>
+            <i class="ri-user-3-line"></i>
           </NavLink>
         </li>
       </ul>
